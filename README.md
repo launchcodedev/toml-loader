@@ -7,7 +7,10 @@ yarn install @servall/toml-loader
 // in your loaders:
 module: {
   rules: [
-    { test: regex, use: '@servall/toml-loader' },
+    {
+      test: /\.toml$/,
+      use: { loader: '@servall/toml-loader' },
+    },
   ],
 },
 ```
