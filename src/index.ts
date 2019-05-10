@@ -3,7 +3,7 @@ import { getOptions } from 'loader-utils';
 import * as toml from '@iarna/toml';
 const isKeyword = require('is-keyword-js');
 
-const loader: wp.loader.Loader = function(source) {
+const loader: wp.loader.Loader = function (source) {
   if (this.cacheable) this.cacheable();
   const callback = this.async();
 
@@ -17,9 +17,9 @@ const loader: wp.loader.Loader = function(source) {
           ${acc}
           export const ${key} = ${JSON.stringify(val)};
         `;
-      } else {
-        return acc;
       }
+
+      return acc;
     }, '');
 
     callback!(null, `
