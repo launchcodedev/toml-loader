@@ -1,0 +1,50 @@
+{
+  "name": "@servall/toml-loader",
+  "description": "Webpack plugin for loading toml",
+  "version": "0.1.0",
+  "license": "MPL-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "test": "jest",
+    "lint": "tslint src/**/*.ts",
+    "fix": "yarn lint --fix",
+    "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "@iarna/toml": "2",
+    "is-keyword-js": "1",
+    "loader-utils": "1"
+  },
+  "peerDependencies": {
+    "webpack": "4"
+  },
+  "devDependencies": {
+    "@types/jest": "24",
+    "@types/loader-utils": "1",
+    "@types/node": "8",
+    "@types/webpack": "4",
+    "jest": "24",
+    "ts-jest": "24",
+    "tslint": "5",
+    "tslint-config-airbnb": "5",
+    "tslint-eslint-rules": "5",
+    "typescript": "3",
+    "webpack": "4"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testMatch": null,
+    "testRegex": "(tests/.*|src/.*\\.test)\\.(ts|js)$",
+    "testPathIgnorePatterns": [
+      "node_modules",
+      ".yarn-cache"
+    ],
+    "modulePathIgnorePatterns": [
+      "example",
+      "node_modules",
+      ".yarn-cache"
+    ]
+  }
+}
