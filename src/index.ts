@@ -1,9 +1,8 @@
-import * as wp from 'webpack';
-import { getOptions } from 'loader-utils';
+import { loader } from 'webpack';
 import * as toml from '@iarna/toml';
 const isKeyword = require('is-keyword-js');
 
-const loader: wp.loader.Loader = function (source) {
+const loader: loader.Loader = function (source) {
   if (this.cacheable) this.cacheable();
   const callback = this.async();
 
