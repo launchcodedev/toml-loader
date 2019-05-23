@@ -6,6 +6,7 @@ include:
 stages:
   - lint
   - build
+  - test
 
 lint:
   extends: .node-lint
@@ -18,3 +19,7 @@ audit:
 build:
   extends: .node-build
   stage: build
+
+test:
+  extends: .node-test
+  stage: test
