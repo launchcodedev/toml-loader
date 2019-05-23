@@ -14,8 +14,8 @@ const compiler = async (fixture: string): Promise<webpack.Stats> => {
       rules: [{
         test: /\.toml$/,
         use: path.resolve(__dirname, 'index.ts'),
-      }]
-    }
+      }],
+    },
   });
 
   compiler.outputFileSystem = new memoryfs();
