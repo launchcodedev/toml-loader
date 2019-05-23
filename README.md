@@ -1,5 +1,7 @@
 ## TOML Loader
-Webpack loader for TOML files. Supports latest TOML spec, and provides named exports.
+![Licensed under MPL 2.0](https://img.shields.io/badge/license-MPL_2.0-green.svg)
+
+Webpack loader for TOML files. Supports the latest TOML spec, and provides named exports.
 
 ```
 yarn install @servall/toml-loader
@@ -24,3 +26,6 @@ Supports default export with all file contents, and named exports.
 import contents from './my-file.toml';
 import { namedExport } from './my-other-file.toml';
 ```
+
+### Alternatives
+- [toml-loader](https://www.npmjs.com/package/toml-loader)
