@@ -1,4 +1,6 @@
 ## TOML Loader
+Webpack loader for TOML files. Supports latest TOML spec, and provides named exports.
+
 ```
 yarn install @servall/toml-loader
 ```

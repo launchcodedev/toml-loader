@@ -23,9 +23,11 @@
   "devDependencies": {
     "@types/jest": "24",
     "@types/loader-utils": "1",
+    "@types/memory-fs": "^0.3.2",
     "@types/node": "8",
     "@types/webpack": "4",
     "jest": "24",
+    "memory-fs": "^0.4.1",
     "ts-jest": "24",
     "tslint": "5",
     "tslint-config-airbnb": "5",
@@ -37,6 +39,7 @@
     "preset": "ts-jest",
     "testMatch": null,
     "testRegex": "(tests/.*|src/.*\\.test)\\.(ts|js)$",
+    "testEnvironment": "node",
     "testPathIgnorePatterns": [
       "node_modules",
       ".yarn-cache"

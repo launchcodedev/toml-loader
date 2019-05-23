@@ -1,0 +1,4 @@
+bat = 11
+
+[foo]
+bar = 'baz'
