@@ -14,3 +14,11 @@ module: {
   ],
 },
 ```
+
+### Usage
+Supports default export with all file contents, and named exports.
+
+```typescript
+import contents from './my-file.toml';
+import { namedExport } from './my-other-file.toml';
+```
