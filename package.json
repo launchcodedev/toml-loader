@@ -1,14 +1,14 @@
 {
-  "name": "@servall/toml-loader",
+  "name": "@lcdev/toml-loader",
   "description": "Webpack plugin for loading toml files",
   "version": "1.0.2-dev",
   "license": "MPL-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": {
-    "name": "Servall Development",
-    "email": "admin@servalldev.com",
-    "url": "https://www.servalldev.com"
+    "name": "Launchcode",
+    "email": "admin@lc.dev",
+    "url": "https://lc.dev"
   },
   "scripts": {
     "build": "rm -rf dist && tsc",
@@ -28,11 +28,11 @@
   "devDependencies": {
     "@types/jest": "24",
     "@types/loader-utils": "1",
-    "@types/memory-fs": "^0.3.2",
+    "@types/memory-fs": "0.3",
     "@types/node": "8",
     "@types/webpack": "4",
     "jest": "24",
-    "memory-fs": "^0.4.1",
+    "memory-fs": "0.4",
     "ts-jest": "24",
     "tslint": "5",
     "tslint-config-airbnb": "5",
