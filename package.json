@@ -1,7 +1,7 @@
 {
   "name": "@lcdev/toml-loader",
   "description": "Webpack plugin for loading toml files",
-  "version": "1.0.2-dev",
+  "version": "1.0.2",
   "license": "MPL-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
