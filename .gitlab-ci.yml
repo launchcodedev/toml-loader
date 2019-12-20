@@ -9,6 +9,7 @@ stages:
   - lint
   - build
   - test
+  - publish
 
 lint:
   extends: .node-lint
@@ -25,3 +26,7 @@ build:
 test:
   extends: .node-test
   stage: test
+
+publish:
+  extends: .node-publish-tag
+  stage: publish
