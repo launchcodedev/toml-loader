@@ -3,7 +3,7 @@
 include:
  - project: 'meat-n-potatoes/ci'
    file: 'all.yml'
-   ref: v1
+   ref: v2
 
 stages:
   - lint
