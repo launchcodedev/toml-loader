@@ -1,6 +1,7 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
-const memoryfs = require('memory-fs');
+
+const Memoryfs = require('memory-fs');
 
 const compiler = async (fixture: string): Promise<webpack.Stats> => {
   const compiler = webpack({
@@ -11,14 +12,16 @@ const compiler = async (fixture: string): Promise<webpack.Stats> => {
       filename: 'bundle.js',
     },
     module: {
-      rules: [{
-        test: /\.toml$/,
-        use: path.resolve(__dirname, 'index.ts'),
-      }],
+      rules: [
+        {
+          test: /\.toml$/,
+          use: path.resolve(__dirname, 'index.ts'),
+        },
+      ],
     },
   });
 
-  compiler.outputFileSystem = new memoryfs();
+  compiler.outputFileSystem = new Memoryfs();
 
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
