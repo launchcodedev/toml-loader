@@ -4,7 +4,11 @@
 Webpack loader for TOML files. Supports the latest TOML spec, and provides named exports.
 
 ```
-yarn install @lcdev/toml-loader
+yarn add @lcdev/toml-loader@1
+
+# or for npm
+
+npm i @lcdev/toml-loader@1
 ```
 
 ```javascript
