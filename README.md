@@ -1,5 +1,7 @@
 ## TOML Loader
-![Licensed under MPL 2.0](https://img.shields.io/badge/license-MPL_2.0-green.svg)
+[![Licensed under MPL 2.0](https://img.shields.io/badge/license-MPL_2.0-green.svg)](https://www.mozilla.org/en-US/MPL/2.0/)
+[![Build Status](https://github.com/servall/toml-loader/workflows/CI/badge.svg)](https://github.com/servall/toml-loader/actions)
+[![npm](https://img.shields.io/npm/v/@lcdev/toml-loader.svg)](https://www.npmjs.com/package/@lcdev/toml-loader)
 
 Webpack loader for TOML files. Supports the latest TOML spec, and provides named exports.
 

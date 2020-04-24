@@ -4,19 +4,29 @@
   "version": "1.0.4",
   "license": "MPL-2.0",
   "main": "dist/index.js",
+  "module": "dist/es/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "/dist",
+    "!*.tsbuildinfo"
+  ],
   "author": {
     "name": "Launchcode",
     "email": "admin@lc.dev",
     "url": "https://lc.dev"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/servall/toml-loader.git"
+  },
   "scripts": {
     "build": "tsc -b",
+    "build:es": "tsc -b tsconfig.es.json",
     "clean": "rm -rf dist *.tsbuildinfo",
     "lint": "eslint --ext .ts,.tsx src",
     "fix": "eslint --ext .ts,.tsx src --fix",
     "test": "jest",
-    "prepublishOnly": "yarn clean && yarn build"
+    "prepublishOnly": "yarn clean && yarn build && yarn build:es"
   },
   "dependencies": {
     "@iarna/toml": "2",
@@ -48,7 +58,10 @@
   },
   "prettier": "@lcdev/prettier",
   "eslintConfig": {
-    "extends": "@lcdev"
+    "extends": "@lcdev",
+    "parserOptions": {
+      "project": "./tsconfig.eslint.json"
+    }
   },
   "jest": {
     "preset": "@lcdev/jest"
