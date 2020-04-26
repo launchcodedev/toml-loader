@@ -3,13 +3,6 @@
   "description": "Webpack plugin for loading toml files",
   "version": "1.0.4",
   "license": "MPL-2.0",
-  "main": "dist/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "/dist",
-    "!*.tsbuildinfo"
-  ],
   "author": {
     "name": "Launchcode",
     "email": "admin@lc.dev",
@@ -19,6 +12,14 @@
     "type": "git",
     "url": "https://github.com/servall/toml-loader.git"
   },
+  "main": "dist/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist",
+    "!*.tsbuildinfo",
+    "!*.test.*"
+  ],
   "scripts": {
     "build": "tsc -b",
     "build:es": "tsc -b tsconfig.es.json",
@@ -58,10 +59,7 @@
   },
   "prettier": "@lcdev/prettier",
   "eslintConfig": {
-    "extends": "@lcdev",
-    "parserOptions": {
-      "project": "./tsconfig.eslint.json"
-    }
+    "extends": "@lcdev"
   },
   "jest": {
     "preset": "@lcdev/jest"
