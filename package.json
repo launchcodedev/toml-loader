@@ -1,7 +1,7 @@
 {
   "name": "@lcdev/toml-loader",
   "description": "Webpack plugin for loading toml files",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MPL-2.0",
   "author": {
     "name": "Launchcode",
@@ -52,8 +52,8 @@
     "eslint": "6",
     "husky": "3",
     "jest": "24",
-    "prettier": "1",
     "memory-fs": "0.4",
+    "prettier": "1",
     "typescript": "3",
     "webpack": "4"
   },
