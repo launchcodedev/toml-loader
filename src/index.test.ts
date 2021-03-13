@@ -1,10 +1,11 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
 
-const Memoryfs = require('memory-fs');
+// eslint-disable-next-line
+const Memoryfs: new () => webpack.Compiler['outputFileSystem'] = require('memory-fs');
 
 const compiler = async (fixture: string): Promise<webpack.Stats> => {
-  const compiler = webpack({
+  const compilation = webpack({
     context: __dirname,
     entry: `./${fixture}`,
     output: {
@@ -21,21 +22,21 @@ const compiler = async (fixture: string): Promise<webpack.Stats> => {
     },
   });
 
-  compiler.outputFileSystem = new Memoryfs();
+  compilation.outputFileSystem = new Memoryfs();
 
   return new Promise((resolve, reject) => {
-    compiler.run((err, stats) => {
+    compilation.run((err, stats) => {
       if (err) reject(err);
-      if (stats.hasErrors()) reject(stats.toJson().errors);
+      if (stats!.hasErrors()) reject(stats!.toJson().errors);
 
-      resolve(stats);
+      resolve(stats!);
     });
   });
 };
 
 test('Loads toml file', async () => {
   const stats = await compiler('example.test.toml');
-  const output = stats.toJson().modules![0].source;
+  const output = stats.toJson({ source: true }).modules![0].source;
 
   expect(output).toMatch('export default {"bat":11,"foo":{"bar":"baz"}}');
   expect(output).toMatch('export const foo = {"bar":"baz"}');

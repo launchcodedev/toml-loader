@@ -1,14 +1,19 @@
-import { loader } from 'webpack';
 import * as toml from '@iarna/toml';
 
-const isKeyword = require('is-keyword-js');
+interface Loader {
+  cacheable?(): void;
+  async(): (error?: Error | null, src?: string) => void;
+}
 
-const loader: loader.Loader = function(source) {
+// eslint-disable-next-line
+const isKeyword: (k: string) => boolean = require('is-keyword-js');
+
+export default function tomlLoader(this: Loader, source: string) {
   if (this.cacheable) this.cacheable();
   const callback = this.async();
 
   try {
-    const parsed = toml.parse(source.toString('utf8'));
+    const parsed = toml.parse(source.toString());
 
     const exports = Object.entries(parsed).reduce((acc, [key, val]) => {
       // we can only do a named export on names that are valid js variable names
@@ -22,16 +27,14 @@ const loader: loader.Loader = function(source) {
       return acc;
     }, '');
 
-    callback!(
+    callback(
       null,
       `
-      ${exports}
-      export default ${JSON.stringify(parsed)};
-    `,
+        ${exports}
+        export default ${JSON.stringify(parsed)};
+      `,
     );
   } catch (err) {
-    callback!(err);
+    callback(err);
   }
-};
-
-export default loader;
+}

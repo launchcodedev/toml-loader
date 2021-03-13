@@ -31,31 +31,28 @@
   },
   "dependencies": {
     "@iarna/toml": "2",
-    "is-keyword-js": "1",
-    "loader-utils": "1"
+    "is-keyword-js": "1"
   },
   "peerDependencies": {
-    "webpack": "4"
+    "webpack": "4 || 5"
   },
   "devDependencies": {
-    "@commitlint/cli": "8",
+    "@commitlint/cli": "11",
     "@lcdev/commitlint": "1",
-    "@lcdev/eslint-config": "0.2",
-    "@lcdev/jest": "0.1",
+    "@lcdev/eslint-config": "0.3",
+    "@lcdev/jest": "0.3",
     "@lcdev/prettier": "0.1",
     "@lcdev/tsconfig": "0.1",
-    "@types/jest": "24",
-    "@types/loader-utils": "1",
+    "@types/jest": "26",
     "@types/memory-fs": "0.3",
     "@types/node": "8",
-    "@types/webpack": "4",
-    "eslint": "6",
-    "husky": "3",
-    "jest": "24",
+    "eslint": "7",
+    "husky": "5",
+    "jest": "26",
     "memory-fs": "0.4",
     "prettier": "1",
-    "typescript": "3",
-    "webpack": "4"
+    "typescript": "4",
+    "webpack": "4 || 5"
   },
   "prettier": "@lcdev/prettier",
   "eslintConfig": {
